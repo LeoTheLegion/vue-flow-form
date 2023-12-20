@@ -83,6 +83,7 @@ export default {
 
     this.setQuestions()
     this.checkTimer()
+    this.FireOnShow(this.activeQuestionIndex)
   },
 
   beforeUnmount() {
@@ -540,6 +541,10 @@ export default {
       }
     },
 
+    onQuestionShow(){
+
+    },
+
     /**
      * Jumps to previous question.
      */
@@ -681,6 +686,8 @@ export default {
       if (question == null) return; //must be done if null
       if (question.onShow)
         question.onShow(questions);
+
+      this.$emit('onShowQuestion', question)
     },
     UpdateQuestionFromAnswers(activeIndex) {
       var questions = this.questionListActivePath
