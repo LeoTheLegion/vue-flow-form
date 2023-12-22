@@ -561,6 +561,8 @@ export default {
         this.reverse = true
 
         this.checkTimer()
+
+        this.FireOnShow(this.activeQuestionIndex);
       }
     },
 
@@ -614,6 +616,8 @@ export default {
 
           this.reverse = index < this.activeQuestionIndex
           this.activeQuestionIndex = index
+
+          this.FireOnShow(this.activeQuestionIndex);
 
           this.checkTimer()
         }
