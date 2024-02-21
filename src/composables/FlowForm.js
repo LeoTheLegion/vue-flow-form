@@ -527,6 +527,7 @@ export default {
               this.activeQuestionIndex = q.question.index
             } else if (this.isOnLastStep) {
               // No more questions left - set "completed" to true
+              this.$emit('completed')
               this.completed = true
               this.activeQuestionIndex = this.questionListActivePath.length
               this.$refs.button && this.$refs.button.focus()
