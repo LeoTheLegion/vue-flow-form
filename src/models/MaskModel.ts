@@ -1,4 +1,4 @@
-export class MaskToken {
+export interface MaskToken {
     token : string;
     pattern? : RegExp;
     transform? : Function;
